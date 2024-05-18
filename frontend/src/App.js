@@ -16,7 +16,7 @@ import Search from './frontend/Search';
 import Logout from './frontend/Logout';
 
 function App() {
-  const [cart, setCart] = useState(0);
+  const [cart, setCart] = useState([]);
   const [searchData, setSearchData] = useState([]);
   let user = JSON.parse(localStorage.getItem('user-info'));
   let userId = user ? user.id : '';
@@ -39,17 +39,17 @@ function App() {
   }
 
   function emptyCart() {
-    setCart(0);
+    setCart([]);
   }
 
   return (
     <Router>
-      <Header items={cart} setSearchData={setSearchData} />
+      <Header items={cart.length} setSearchData={setSearchData} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        {cart === 0 ? (
+        {cart.length === 0 ? (
           <Route path="/cartlist" element={<div className="text-center mt-5"><h3>Sorry, Cart is empty!!</h3></div>} />
         ) : (
           <Route path="/cartlist" element={<CartList cartItem={cartItems} />} />
