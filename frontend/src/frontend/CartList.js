@@ -52,7 +52,7 @@ export default function CartList({cartItem}) {
                                     <p className="card-text text-truncate">{item.description}</p>
                                 </a>
                                 <p className="card-text">
-                                    <small className="text-danger"><b> Unit price:</b> ৳ {item.price}</small>
+                                    <small className="text-danger"><b> Unit price:</b> ₱ {item.price}</small>
                                     <small className="text-danger"><b> Qty:</b>{item.qty}</small>
                                 </p>
                             </div>

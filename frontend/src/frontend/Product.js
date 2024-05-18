@@ -57,7 +57,7 @@ export default function Product({cartItem}) {
                 </div>
                 <p><b>Brand: </b> Sony</p>
                 <p><b>Category: </b> {data.category}</p>
-                <p><b>Price: </b>৳ {data.price}</p>
+                <p><b>Price: </b>₱ {data.price}</p>
                 <p> 
                         
                         <label for="qu"><b>Quantity:</b> </label> 

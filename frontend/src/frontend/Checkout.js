@@ -59,19 +59,19 @@ export default function Checkout({cartItem}) {
                 <tbody>
                     <tr>
                         <td>Price</td>
-                        <td>৳ {total}</td>
+                        <td>₱ {total}</td>
                     </tr>
                     <tr>
                         <td>Tax (15%)</td>
-                        <td>৳ {tax}</td>
+                        <td>₱ {tax}</td>
                     </tr>
                     <tr>
                         <td>Delivary</td>
-                        <td>৳ 100</td>
+                        <td>₱ 100</td>
                     </tr>
                     <tr>
                         <td>Total Amount</td>
-                        <td>৳ {total+tax+100}</td>
+                        <td>₱ {total+tax+100}</td>
                     </tr>
                 </tbody>
             </table>

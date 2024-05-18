@@ -19,7 +19,7 @@ export default function Search({searchData}) {
                                 <h5 className="card-title">{item.name}</h5>
                                 <p className="card-text">{item.description.slice(0, 75)}...</p>
                             </Link>
-                            <p className="card-text"><small className="text-danger">৳ {item.price}</small></p>
+                            <p className="card-text"><small className="text-danger">₱ {item.price}</small></p>
                         </div>
                     </div>
                 </div>
