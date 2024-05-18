@@ -35,7 +35,7 @@ export default function Registration() {
         <div className="container veiw-h">
             <div className="row my-5">
                 <div className="col-md-4 m-auto bg-white rounded p-5">
-                    <h4>Hell<i className="fas fa-power-off fs-6"></i>! let's get started </h4>
+                    <h4>Hello! let's get started </h4>
                     <h6 className="fw-light">Sign up to continue.</h6>
                     {/* <form action="/register" method="POST" className="mt-4"> */}
                         

@@ -36,7 +36,7 @@ export default function Home() {
                                     {/* Product name */}
                                     <h5 className="fw-bolder">{item.name}</h5>
                                     {/* Product price */}
-                                    ৳ {item.price}
+                                    ₱ {item.price}
                                 </div>
                             </div>
                             {/* Product actions */}

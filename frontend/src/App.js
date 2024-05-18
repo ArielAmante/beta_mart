@@ -8,7 +8,6 @@ import Contact from './frontend/Contact';
 import Header from './frontend/includes/Header';
 import Login from './frontend/Login';
 import Registration from './frontend/Registration';
-import Footer from './frontend/includes/Footer';
 import CartList from './frontend/CartList';
 import Product from './frontend/Product';
 import Checkout from './frontend/Checkout';
@@ -59,7 +58,6 @@ function App() {
             <Route path="/logout" element={<Logout emptyCart={emptyCart} />} />
           </Route>
         </Routes>
-      <Footer />
     </BrowserRouter>
   );
 }
