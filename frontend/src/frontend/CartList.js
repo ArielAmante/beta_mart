@@ -35,7 +35,7 @@ export default function CartList({cartItem}) {
             <div className="col-8 m-auto bg-white p-3 mt-3">
                 <div className="row g-1 border-bottom">
                     <h2 className="col-9">Shopping Cart</h2>
-                    <Link className="btn btn-info col-3 mb-1" to="/checkout">Order Now</Link>
+                    <Link className="btn btn-info col-3 mb-1" to="/checkout">Proceed to Payment</Link>
                 </div>
                 
                 <div className="border-bottom">
@@ -65,7 +65,7 @@ export default function CartList({cartItem}) {
                     </div>
                 </div>
 
-                {!data[0] ? <div className="text-danger fs-4 text-center">Soory, Cart is empty!!</div> : "" }
+                {!data[0] ? <div className="text-danger fs-4 text-center">Sorry, Cart is empty!!</div> : "" }
             </div>
         </main>
     </>
