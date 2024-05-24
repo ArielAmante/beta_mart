@@ -8,6 +8,18 @@ export default function CartList({ cartItem, clearCart }) {
 
   const user = JSON.parse(localStorage.getItem('user-info'));
   const userId = user ? user.id : '';
+  
+  // useEffect to set shippingData when user info is available
+  useEffect(() => {
+    if (user) {
+      setShippingData({
+        name: user.name || '',
+        address: user.address || '',
+        city: user.city || '',
+        paymentMode: 'Online Payment'
+      });
+    }
+  }, [user]);
 
   useEffect(() => {
     getData();
