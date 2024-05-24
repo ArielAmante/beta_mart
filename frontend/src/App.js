@@ -3,8 +3,8 @@ import './assets/style.css';
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './frontend/Home';
-import About from './frontend/AboutUs';
-import Contact from './frontend/ContactUs';
+import About from './frontend/About';
+import Contact from './frontend/Contact';
 import Header from './frontend/includes/Header';
 import Login from './frontend/Login';
 import Registration from './frontend/Registration';
@@ -31,11 +31,9 @@ function App() {
   }, []);
 
   async function cartItems() {
-    if (userId) {
-      let result = await fetch(`http://127.0.0.1:8000/api/cartitem/${userId}`);
-      result = await result.json();
-      setCart(result);
-    }
+    let result = await fetch('http://127.0.0.1:8000/api/cartitem/' + userId);
+    result = await result.json();
+    setCart(result);
   }
 
   function emptyCart() {
@@ -49,11 +47,16 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+<<<<<<< HEAD
         {cart.length === 0 ? (
           <Route path="/cartlist" element={<div className="text-center mt-5"><h3>Sorry, Cart is empty!!</h3></div>} />
         ) : (
           <Route path="/cartlist" element={<CartList cartItem={cartItems} />} />
         )}
+=======
+        {cart === 0 && <Route path="/cartlist" element={<div className="text-center mt-5"><h3>Sorry, Cart is empty!!</h3></div>} />}
+        {cart !== 0 && <Route path="/cartlist" element={<CartList cartItem={cartItems} />} />}
+>>>>>>> parent of 8163fda (modify aboutUs and contactUs components)
         <Route path="/login" element={<Login cartItem={cartItems} userUpdate={userUpdate} />} />
         <Route path="/register" element={<Registration />} />
         <Route path="/product/:id" element={<Product cartItem={cartItems} />} />
