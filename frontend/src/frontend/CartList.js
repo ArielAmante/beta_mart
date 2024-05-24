@@ -39,13 +39,34 @@ export default function CartList({ cartItem, clearCart }) {
     setShippingData({ ...shippingData, [e.target.name]: e.target.value });
   };
 
-  const submitOrder = (e) => {
+  const submitOrder = async (e) => {
     e.preventDefault();
-    console.log('Shipping Data:', shippingData);
-    alert('Your order has been placed. Thank you for your purchase!');
-    clearCart();
-    setShippingData({ name: '', address: '', city: '', paymentMode: 'Online Payment' });
-    setShowCheckout(false);
+    const orderData = {
+      userId,
+      shippingData,
+      items: data
+    };
+    try {
+      let result = await fetch('http://127.0.0.1:8000/api/orderplace', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(orderData)
+      });
+      result = await result.json();
+      if (result) {
+        console.log('Order placed successfully:', result);
+        alert('Your order has been placed. Thank you for your purchase!');
+        clearCart();
+        setShippingData({ name: '', address: '', city: '', paymentMode: 'Online Payment' });
+        setShowCheckout(false);
+        setData([]); // Clear cart items in the state
+      }
+    } catch (error) {
+      console.error('Error placing order:', error);
+    }
   };
 
   const totalPrice = data.reduce((total, item) => total + item.price * item.qty, 0);
